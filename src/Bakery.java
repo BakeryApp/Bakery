@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Bakery {
@@ -6,24 +8,45 @@ public class Bakery {
     private String date;
     private int quantity;
 
-    private boolean gluten,dairy,egg,soy,peanut,sesame, treenut,vegan;
+    private boolean gluten,dairy,egg,soy,peanut;
+    private boolean[] allergies;
+    private String[] strings = {"gluten", "dairy", "egg", "soy", "peanut"};
 
     public Bakery(){}
     public Bakery(String name, double price,String date,int quantity,boolean gluten,
-                boolean dairy,boolean egg, boolean soy, boolean peanut,
-                  boolean treenut , boolean vegan){
+                boolean dairy,boolean egg, boolean soy, boolean peanut){
         this.name = name;
         this.price = price;
         this.date = date;
         this.quantity = quantity;
-        this. gluten = gluten;
+        this.gluten = gluten;
         this.dairy = dairy;
         this.egg = egg;
         this.soy = soy;
         this.peanut = peanut;
-        this. treenut = treenut;
-        this. vegan = vegan;
-        this.sesame = sesame;
+        this.allergies = new boolean[]{gluten, dairy, egg, soy, peanut};
+    }
+    public void displayText(){
+        System.out.print("Name: " + name + ", Price: $" + price + ", Exp. date: " + date + ", Quantity: " + quantity);
+        boolean show = false;
+        ArrayList<Allergy> l = new ArrayList<>();
+        for(int i=0; i<allergies.length; i++){
+            if(allergies[i]){
+                show=true;
+                l.add(new Allergy(strings[i], allergies[i]));
+            }
+        }
+        if(show) {
+            System.out.print(", Contains: ");
+            for(int i = 0; i<l.size(); i++){
+                if(i==l.size()-1){
+                    System.out.print(l.get(i).getName());
+                }
+                else {
+                    System.out.print(l.get(i).getName() + ", ");
+                }
+            }
+        }
 
     }
 
@@ -99,27 +122,4 @@ public class Bakery {
         this.peanut = peanut;
     }
 
-    public boolean isSesame() {
-        return sesame;
-    }
-
-    public void setSesame(boolean sesame) {
-        this.sesame = sesame;
-    }
-
-    public boolean isTreenut() {
-        return treenut;
-    }
-
-    public void setTreenut(boolean treenut) {
-        this.treenut = treenut;
-    }
-
-    public boolean isVegan() {
-        return vegan;
-    }
-
-    public void setVegan(boolean vegan) {
-        this.vegan = vegan;
-    }
 }
