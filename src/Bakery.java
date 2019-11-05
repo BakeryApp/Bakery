@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,7 +28,8 @@ public class Bakery {
         this.allergies = new boolean[]{gluten, dairy, egg, soy, peanut};
     }
     public void displayText(){
-        System.out.print("Name: " + name + ", Price: $" + price + ", Exp. date: " + date + ", Quantity: " + quantity);
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.print("Name: " + name + ", Price: " + formatter.format(price) + ", Exp. date: " + date + ", Quantity: " + quantity);
         boolean show = false;
         ArrayList<Allergy> l = new ArrayList<>();
         for(int i=0; i<allergies.length; i++){
