@@ -91,49 +91,4 @@ public class BakedDB {
         }
         return all;
     }
-    public ArrayList glutenSearch(){
-        ArrayList<Bakery> results = new ArrayList<>();
-        for(Bakery b : list){
-            if(!b.isGluten()) {
-                results.add(b);
-            }
-        }
-        return results;
-    }
-    public ArrayList dairySearch(){
-        ArrayList<Bakery> results = new ArrayList<>();
-        for(Bakery b : list){
-            if(!b.isDairy()) {
-                results.add(b);
-            }
-        }
-        return results;
-    }
-    public ArrayList soySearch(){
-        ArrayList<Bakery> results = new ArrayList<>();
-        for(Bakery b : list){
-            if(!b.isSoy()) {
-                results.add(b);
-            }
-        }
-        return results;
-    }
-    public ArrayList peanutSearch(){
-        ArrayList<Bakery> results = new ArrayList<>();
-        for(Bakery b : list){
-            if(!b.isPeanut()) {
-                results.add(b);
-            }
-        }
-        return results;
-    }
-    public ArrayList eggSearch(){
-        ArrayList<Bakery> results = new ArrayList<>();
-        for(Bakery b : list){
-            if(!b.isEgg()) {
-                results.add(b);
-            }
-        }
-        return results;
-    }
 }
