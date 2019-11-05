@@ -49,7 +49,7 @@ public class Bakery {
                 }
             }
         }
-
+        System.out.println();
     }
 
     public String getName() {

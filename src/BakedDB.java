@@ -1,9 +1,12 @@
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class BakedDB {
 
     private ArrayList<Bakery> list;
-    public BakedDB(){    }
+    public BakedDB(){
+        list = new ArrayList<>();
+    }
 
     public BakedDB(ArrayList list){
         this.list = list;
@@ -46,6 +49,30 @@ public class BakedDB {
                 b.displayText();
             }
         }
+    }
+    public void displayAll(){
+        System.out.println("Cart: ");
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        double total = 0;
+        for(Bakery b : list){
+            System.out.println(b.getName() + " - Quantity: " + b.getQuantity());
+            total += (b.getPrice()*b.getQuantity());
+        }
+        System.out.println("Total: " + formatter.format(total));
+    }
+    public ArrayList<Bakery> addToCart(String choice, int q, ArrayList<Bakery> all){
+        for(int i = 0; i < all.size(); i++) {
+            if (choice.equalsIgnoreCase(all.get(i).getName())) {
+                if(q <= all.get(i).getQuantity()) {
+                    this.list.add(all.get(i));
+                    this.list.get(list.size()-1).setQuantity(q);
+                }
+                else{
+                    System.out.println("We do not have that many in stock.");
+                }
+            }
+        }
+        return all;
     }
     public ArrayList glutenSearch(){
         ArrayList<Bakery> results = new ArrayList<>();
