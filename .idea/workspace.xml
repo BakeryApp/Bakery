@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cf867dd-12e7-404c-a7ea-423c72be3da6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BakedDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BakedDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BakedDB.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,7 @@
   <component name="ProjectId" id="1TCYHfHVP4K274Wd5hzWjHjrDNP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -49,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572965457046</updated>
-      <workItem from="1572965461466" duration="862000" />
+      <workItem from="1572965461466" duration="1549000" />
     </task>
     <servers />
   </component>

@@ -3,10 +3,9 @@ import java.util.ArrayList;
 public class BakedDB {
 
     private ArrayList<Bakery> list;
-    public BakedDB(){};
+    public BakedDB(){
+        list.add(new Bakery());
 
-    public BakedDB(ArrayList list){
-        this.list = list;
     }
 
     public ArrayList<Bakery> getList() {
@@ -17,7 +16,7 @@ public class BakedDB {
         this.list = list;
     }
 
-    public ArrayList glutenSearch(String s){
+    public ArrayList glutenSearch(){
         ArrayList<Bakery> results = new ArrayList<>();
         for(Bakery b : list){
             if(!b.getGluten) {
@@ -26,7 +25,7 @@ public class BakedDB {
         }
         return results;
     }
-    public ArrayList dairySearch(String s){
+    public ArrayList dairySearch(){
         ArrayList<Bakery> results = new ArrayList<>();
         for(Bakery b : list){
             if(!b.getDairy) {
@@ -35,7 +34,7 @@ public class BakedDB {
         }
         return results;
     }
-    public ArrayList soySearch(String s){
+    public ArrayList soySearch(){
         ArrayList<Bakery> results = new ArrayList<>();
         for(Bakery b : list){
             if(!b.getSoy) {
@@ -48,6 +47,15 @@ public class BakedDB {
         ArrayList<Bakery> results = new ArrayList<>();
         for(Bakery b : list){
             if(!b.getPeanut) {
+                results.add(b);
+            }
+        }
+        return results;
+    }
+    public ArrayList eggSearch(String s){
+        ArrayList<Bakery> results = new ArrayList<>();
+        for(Bakery b : list){
+            if(!b.getEgg) {
                 results.add(b);
             }
         }
