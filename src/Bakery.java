@@ -124,4 +124,19 @@ public class Bakery {
         this.peanut = peanut;
     }
 
+    public boolean[] getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(boolean[] allergies) {
+        this.allergies = allergies;
+    }
+
+    public String[] getStrings() {
+        return strings;
+    }
+
+    public void setStrings(String[] strings) {
+        this.strings = strings;
+    }
 }

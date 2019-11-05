@@ -19,25 +19,42 @@ public class BakedDB {
     public void setList(ArrayList<Bakery> list) {
         this.list = list;
     }
-    public void search(String s){
+    public void search(String [] array){
         ArrayList<Bakery> results = new ArrayList<>();
-        if(s.equalsIgnoreCase("all")){
-            results = list;
-        }
-        else if(s.equalsIgnoreCase("gluten")){
-            results = glutenSearch();
-        }
-        else if(s.equalsIgnoreCase("dairy")){
-            results = dairySearch();
-        }
-        else if(s.equalsIgnoreCase("egg")){
-            results = eggSearch();
-        }
-        else if(s.equalsIgnoreCase("peanut")){
-            results = peanutSearch();
-        }
-        else if(s.equalsIgnoreCase("soy")){
-            results = soySearch();
+        /*for(String s : array) {
+            if (s.equalsIgnoreCase("all")) {
+                results = list;
+            }
+            if (s.equalsIgnoreCase("gluten")) {
+                results.addAll(glutenSearch());
+            }
+            if (s.equalsIgnoreCase("dairy")) {
+                results.addAll(dairySearch());
+            }
+            if (s.equalsIgnoreCase("egg")) {
+                results = eggSearch();
+            }
+            if (s.equalsIgnoreCase("peanut")) {
+                results = peanutSearch();
+            }
+            if (s.equalsIgnoreCase("soy")) {
+                results = soySearch();
+            }
+        }*/
+        for(Bakery b : list){
+            boolean bool = false;
+            for(String s : array){
+                for(int i = 0; i < b.getStrings().length; i++){
+                    if(b.getStrings()[i].equalsIgnoreCase(s)){
+                        if(b.getAllergies()[i]){
+                            bool = true;
+                        }
+                    }
+                }
+            }
+            if(!bool){
+                results.add(b);
+            }
         }
         for( Bakery b : results){
             System.out.println(b.getName());

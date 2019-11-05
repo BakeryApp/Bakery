@@ -28,7 +28,8 @@ public class Main {
             Scanner k = new Scanner(System.in);
             System.out.println("To search for foods that you can eat, please enter your dietary restriction or type \"all\":");
             String diet = k.nextLine();
-            db.search(diet);
+            String[] array = diet.split(" ");
+            db.search(array);
             System.out.println("Choose an item from the list to see more information");
             String choice = k.nextLine();
             db.display(choice);
